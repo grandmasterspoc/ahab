@@ -1,0 +1,102 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Sign Up</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-row m-b-55">
+                            <div class="name">Name</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-6">
+                                        <div class="input-group-desc">
+
+                                            <%= f.text_field :first_name, autofocus: true, autocomplete: "First Name", class: 'input--style-5', name: 'first_name' %>
+                                            <label class="label--desc">first name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group-desc">
+
+                                            <%= f.text_field :last_name, autofocus: true, autocomplete: "Last Name", class: 'input--style-5', name: 'last_name' %>
+                                            <label class="label--desc">last name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Phone</div>
+                            <div class="value">
+                                <div class="row row-refine">
+
+                                    <div class="col-12">
+                                        <div class="input-group-desc">
+                                            <!-- <input class="input--style-5" type="text" name="phone"> -->
+                                            <%= f.text_field :phone_number,  autofocus: true,class:"input--style-5" %>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Password</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-12">
+                                        <div class="input-group-desc">
+                                            <!-- <input class="input--style-5" type="text" name="phone"> -->
+                                            <%= f.password_field :password, autocomplete: "new-password",class:"input--style-5" %>
+                                            <% if @minimum_password_length %>
+                                              <label class="label--desc">6 charecters minimum</label>
+                                            <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Password Confirmation</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-12">
+                                        <div class="input-group-desc">
+
+                                            <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"input--style-5" %>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+
+                            <%= f.submit "Register", class:'btn btn--radius-2 btn--red' %>
+                        </div><br/>
+                        <% end %>
+                        <%= render "devise/shared/links" %>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  
